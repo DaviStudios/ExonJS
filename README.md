@@ -11,7 +11,7 @@ ExonJS is a JavaScript framework with a unique approach to **making web developm
 
 ## Installation
 
-To start using ExonJS, download the `Exon.js` file from the [releases tab](https://github.com/yourusername/exonjs/releases) of the GitHub repository. Include the script in your HTML file by linking to the downloaded file.
+To start using ExonJS, download the `Exon.js` file from the [releases tab](https://github.com/davistudios/ExonJS/releases) of the GitHub repository. Include the script in your HTML file by linking to the downloaded file.
 
 ## Basic Usage
 
