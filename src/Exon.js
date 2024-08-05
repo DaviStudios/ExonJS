@@ -4,7 +4,6 @@ function parseExonStyle(obj) {
     if (obj['size.width']) style += `width: ${obj['size.width']}px ; `;
     if (obj['size.height']) style += `height: ${obj['size.height']}px ; `;
     if (obj['font.size']) style += `font-size: ${obj['font.size']}px ; `;
-    if (obj['font.align']) style += `text-align: ${obj['font.align']} ; `;
     if (obj['font.family']) style += `font-family: ${obj['font.family']} ; `;
     if (obj['pos.left']) {
         if (!style.includes('position: absolute;')) {
