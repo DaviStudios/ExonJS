@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExonJS Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #282c34;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #282c34;
+        }
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #e8e8e8;
+            border-radius: 3px;
+            padding: 2px 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #e8e8e8;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+            max-width: 100%;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .feature {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            margin-top: 0;
+        }
+        .feature code {
+            background: none;
+            color: #d63384;
+        }
+        footer {
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 3px solid #007bff;
+            font-size: 0.9em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ExonJS Documentation</h1>
+        <p>Comprehensive Guide to Using ExonJS</p>
+    </header>
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>ExonJS is a JavaScript framework designed to simplify web development. It offers functionality for dynamic styling, UI element creation, random utilities, and reactive variables.</p>
+        </section>
+        
+        <section>
+            <h2>Class: <code>ExonJS</code></h2>
+            <p>The main class of the ExonJS framework, providing various methods for creating and managing UI elements, applying styles, and handling random functions.</p>
+            
+            <div class="feature">
+                <h3>Constructor: <code>ExonJS()</code></h3>
+                <p>Initializes a new ExonJS instance.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Method: <code>Style(name, json)</code></h3>
+                <p>Defines a style that can be applied to UI elements.</p>
+                <pre><code>
+exon.Style('myStyle', JSON.stringify({
+    'font.size': 20,
+    'back.color': '#333',
+    'size.width': 150,
+    'size.height': 50,
+    'font.family': 'Arial, sans-serif',
+    'pos.left': 100,
+    'pos.top': 50
+}));
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>Button(txt, func, exonProps)</code></h3>
+                <p>Creates a button element with the specified text, click function, and properties.</p>
+                <pre><code>
+const btn = exon.Button('Click Me', () => alert('Button Clicked!'), { 'style': 'myButtonStyle' });
+                </code></pre>
+            </div>
+            
+            <div class="feature">
+                <h3>Method: <code>Text(txt, exonProps)</code></h3>
+                <p>Creates a text element (anchor tag) with the specified text and properties.</p>
+                <pre><code>
+const text = exon.Text('Hello World!', { 'style': 'myTextStyle' });
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>getElementById(id)</code></h3>
+                <p>Returns the EXON element with the specified ID.</p>
+                <pre><code>
+const elem = exon.getElementById('myElementId');
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>nline()</code></h3>
+                <p>Inserts a line break in the document body.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>percentToPixelsWidth(percent)</code></h3>
+                <p>Converts a percentage to pixels based on the document width.</p>
+                <pre><code>
+let pixels = exon.percentToPixelsWidth(50); // Converts 50% to pixels
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>percentToPixelsHeight(percent)</code></h3>
+                <p>Converts a percentage to pixels based on the document height.</p>
+                <pre><code>
+let pixels = exon.percentToPixelsHeight(50); // Converts 50% to pixels
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>render(elem)</code></h3>
+                <p>Renders a UI element to the document body with applied styles and an auto-generated ID.</p>
+                <pre><code>
+const header = exon.Text('Welcome!', { 'style': 'headerStyle' });
+exon.render(header);
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>randMax(max)</code></h3>
+                <p>Generates a random integer from 0 to the specified maximum value.</p>
+                <pre><code>
+let random = exon.randMax(10); // Generates a number between 0 and 10
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>randMinMax(min, max)</code></h3>
+                <p>Generates a random integer between the specified minimum and maximum values.</p>
+                <pre><code>
+let random = exon.randMinMax(5, 15); // Generates a number between 5 and 15
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>randChoice(array)</code></h3>
+                <p>Selects a random element from an array.</p>
+                <pre><code>
+let choice = exon.randChoice([1, 2, 3, 4, 5]); // Selects a random element from the array
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>randChoiceDict(dict)</code></h3>
+                <p>Selects a random key from an dict.</p>
+                <pre><code>
+let choice = exon.randChoice({a1: true, a2: true, a3: false}); // Selects a random key from the array
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Method: <code>exonVar(initv, func)</code></h3>
+                <p>Creates a reactive variable that triggers a function when its value changes.</p>
+                <pre><code>
+let counter = exon.exonVar(0, (oldValue, newValue) => {
+    console.log(\`Counter changed from \${oldValue} to \${newValue}!\`);
+});
+                </code></pre>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Style Syntax</h2>
+            <p>Styles are defined using JSON objects with the following properties:</p>
+            <ul>
+                <li><code>back.color</code>: Sets the background color of the element (e.g., <code>#f00</code>).</li>
+                <li><code>size.width</code>: Sets the width of the element in pixels (e.g., <code>200</code>).</li>
+                <li><code>size.height</code>: Sets the height of the element in pixels (e.g., <code>100</code>).</li>
+                <li><code>font.size</code>: Sets the font size in pixels (e.g., <code>16</code>).</li>
+                <li><code>font.family</code>: Sets the font family (e.g., <code>'Arial'</code>).</li>
+                <li><code>pos.left</code>, <code>pos.right</code>, <code>pos.top</code>, <code>pos.bottom</code>: Sets the position of the element (e.g., <code>50</code> for 50 pixels from the left).</li>
+                <li><code>pos.set</code>: Currently only supports <code>'center'</code> for centering the element.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Examples</h2>
+            <div class="feature">
+                <h3>Basic Button Example</h3>
+                <pre><code>
+const button = exon.Button('Click Me', () => alert('Clicked!'), { 'style': 'buttonStyle' });
+exon.render(button);
+                </code></pre>
+            </div>
+
+            <div class="feature">
+                <h3>Styling Example</h3>
+                <pre><code>
+exon.Style('buttonStyle', JSON.stringify({
+    'font.size': 16,
+    'back.color': '#007bff',
+    'size.width': 150,
+    'size.height': 50,
+    'font.family': 'Arial, sans-serif',
+    'pos.set': 'center'
+}));
+const styledButton = exon.Button('Styled Button', () => alert('Styled!'), { 'style': 'buttonStyle' });
+exon.render(styledButton);
+                </code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ExonJS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
