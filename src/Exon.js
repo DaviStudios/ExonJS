@@ -94,7 +94,7 @@ class ExonJS {
         }
     }
 
-    nline() {
+    br() {
         document.body.appendChild(document.createElement('br'))
     }
 

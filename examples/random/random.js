@@ -5,8 +5,9 @@ exon.Style('opt', JSON.stringify({
 }))
 
 exon.Style('button', JSON.stringify({
-    'size.height': 42,
-    'size.width': 42,
+    'size.height': 52,
+    'size.width': 52,
+    'pos.top': 8
 }))
 
 let min = exon.Input('Min...', {'id': 'min', 'style': 'opt'})
@@ -19,5 +20,8 @@ let gen = exon.Button('+', () => {
 }, {'style': 'button'})
 
 exon.render(min)
-exon.nline()
+exon.render(gen)
+exon.br()
 exon.render(max)
+exon.br()
+exon.render(txt)
