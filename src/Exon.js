@@ -4,6 +4,11 @@ function parseExonStyle(obj) {
     if (obj['size.width']) style += `width: ${obj['size.width']}px ; `;
     if (obj['size.height']) style += `height: ${obj['size.height']}px ; `;
     if (obj['font.size']) style += `font-size: ${obj['font.size']}px ; `;
+    if (obj['padding.left']) style += `padding-left: ${obj['padding.left']}px ; `;
+    if (obj['padding.right']) style += `padding-right: ${obj['padding.right']}px ; `;
+    if (obj['padding.top']) style += `padding-top: ${obj['padding.top']}px ; `;
+    if (obj['padding.bottom']) style += `padding-bottom: ${obj['padding.bottom']}px ; `;
+    if (obj['padding']) style += `padding: ${obj['padding.bottom']}px ; `;
     if (obj['font.family']) style += `font-family: ${obj['font.family']} ; `;
     if (obj['pos.left']) {
         if (!style.includes('position: absolute;')) {
@@ -59,6 +64,13 @@ class ExonJS {
         return btn
     }
 
+    Input(placeholder, props = {}) {
+        let btn = document.createElement('input')
+        btn.placeholder = placeholder
+        btn.exon = props
+        return btn
+    }
+
     Text(txt, props = {}) {
         let btn = document.createElement('a')
         btn.textContent = txt
@@ -69,6 +81,16 @@ class ExonJS {
     getElementById(id) {
         if (this.elements[id]) {
             return document.getElementById(this.elements[id])
+        }
+    }
+
+    getInputValue(id) {
+        if (this.elements[id]) {
+            if (document.getElementById(this.elements[id]).tagName == 'INPUT') {
+                return document.getElementById(this.elements[id]).value
+            } else {
+                return '0'
+            }
         }
     }
 
